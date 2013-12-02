@@ -32,12 +32,12 @@
 				通知公告
 			</div>
 			
-			<div class="newsItem" style="height:150px;">
+			<div class="newsItem" style="height:193px;">
 					<%
 						exec1="select * from news where type_id=1"
 						set rs1=server.createobject("adodb.recordset")
 						rs1.open exec1,conn,1,1
-						for i= 1 to 3
+						for i= 1 to 4
 						if rs1.eof then
 						exit for
 						end if
@@ -51,12 +51,12 @@
 			<div class="adDiv">
 				信息动态
 			</div>
-			<div class="newsItem" style="height:150px;">
+			<div class="newsItem" style="height:193px;">
 				<%
 						exec2="select * from news where type_id=2"
 						set rs2=server.createobject("adodb.recordset")
 						rs2.open exec2,conn,1,1
-						for i= 1 to 3
+						for i= 1 to 4
 						if rs2.eof then
 						exit for
 						end if
