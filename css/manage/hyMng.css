@@ -1,0 +1,603 @@
+html{
+	font-family:"微软雅黑";
+}
+/****************************/
+/********* 公共操作区 *********/
+/****************************/
+/* 拖动区-DIV对象 */
+#editor{
+	position: absolute; 
+	left: -457px; 
+	top: -405px; 
+	height: 3500px; 
+	width: 3700px; 
+	background-color: ''; 
+	border: 3px solid green; 
+	-moz-user-select: none; 
+	z-index: 150;
+	overflow: hidden;
+}
+
+/* 作业对象-Loading对象 */
+#loadingMasked{
+	display:none;
+	position: absolute; 
+	left: 0; 
+	top: 0px; 
+	height: 100%; 
+	width: 100%; 
+	z-index: 1000;
+	background-color:#FcFcFc;
+}
+#loadingMasked img{
+	position: absolute; 
+	left: 50%; 
+	top: 48%; 
+	z-index: 1000;
+}
+
+/* 作业步-DIV点对象 */
+.jobObjDiv{
+	position:absolute;
+	height:30px;
+	width:50px;
+	cursor:pointer;
+	white-space:nowrap;
+	z-index:250;
+}
+/* 作业步-图片点对象 */
+.jobImgCss{
+	border: 0;
+	height: 30px;
+	width : 30px;
+}
+/* 作业步-D名称点对象 */
+.jobNameDiv{
+	text-align:center;
+	font-size:11px;
+	width:30px;
+	top:5px;
+	left:5px;
+}
+.jobSet{
+	background-color:#f8f8f8;
+	border:1px solid #D3D3D3;
+	width : 96%;
+	height : 30px;
+	margin-top:3px;
+	padding-top:2px;
+	padding-left:2px;
+}
+
+.jobSet div{
+	width:100%; 
+	height:30px;
+}
+.textCenter{
+	text-align:-moz-center !important; /*For FireFox*/
+	text-align:center; /*For IE*/
+}
+
+/* 导航栏-主体框架区 */
+#tipNvg{
+	position: absolute;
+	top: 34px;
+	left: 18.1%;
+	z-index: 700;
+	width: auto;
+	display: ;
+	font-size:10pt;
+}
+/* 导航栏-箭头显示区 */
+#tipNvg .tipArrow{
+	height:8px;
+	width:12px;
+	position: absolute;
+	top: 26px;
+	right: 18.6%;
+	display: none;
+}
+
+.div{
+	position:absolute;
+  	top:60px;
+  	left:200px;
+  	width:96px;
+  	height:100px;
+}
+.commonUl{
+	position:absolute;
+    top:0px;
+   	left:0px;
+	width:96px;
+	font-size:12px;
+	background-color:yellow;
+   	list-style:none;
+	margin:0px;
+	padding:3px 0px;
+	border:1px solid green;
+   	z-index:999;
+}
+.commonLi_hasChild{
+ 	margin:1px 5px;
+ 	padding:0px 2px 0px 3px; 
+ 	height:20px;
+ 	line-height:20px;
+ 	width:80px;
+ 	float:left;
+    font-family:arial, verdana, sans-serif;
+    z-index:999;
+}
+.commonLi_noChild{
+ 	margin:1px 5px;
+ 	padding:0px 2px 0px 3px; 
+ 	height:20px;
+ 	line-height:20px;
+ 	width:80px;
+ 	float:left;
+    font-family:arial, verdana, sans-serif;
+    z-index:999;
+}
+.jobtbl{
+	width: 100%; 
+	height: 198px; 
+	border: 0px solid green; 
+	display:none; 
+	z-index: 1060;
+}
+
+/****************************************************/
+/******************** 备份点信息 **********************/
+/****************************************************/
+/* 备份点-内容框架 */
+#backupContent{
+	border:0px solid #99BBE8;
+	width:770px;
+	*width:771px;
+	display:none;
+	position: absolute;
+	top:35px;
+	right:0px;
+	z-index:9000;
+}
+/* 备份点-按钮框架 */
+#bkpMenu{
+	border:0;
+	border-bottom:1px solid #99BBE8;
+	backGround:#FFFFFF;
+	float:left;
+	width:96.2%;
+	position: absolute;
+	height:35px;
+	
+}
+/* 备份点-按钮修饰 */
+.menuBar{
+	border:1px solid #99BBE8;
+	background: url("../../images/jobstp/nock_bg.png") center ;
+	float:left;
+	width:120px;
+	height:30px;
+	margin-left:2px;
+	text-align:-moz-center !important; /*For FireFox*/
+	text-align:center; /*For IE*/
+	font-weight:normal;
+	padding-top:2px;
+	cursor:pointer;
+	float:left;
+	color:#8F8F8F;
+}
+/* 备份点-按钮聚焦修饰 */
+.focusBar{
+	background: url("../../images/jobstp/ck_bg.png") center ;
+	font-weight:bold;
+	border:1px solid #99BBE8;
+	border-bottom:0px;
+	height:33px;
+	color:#000000;
+	float:left;
+}
+/* 备份点-按钮移动修饰 */
+.hoverBar{
+	background: url("../../images/jobstp/nockhv_bg.png") center ;
+	color:#000000;
+	border:1px solid #99BBE8;
+}
+/* 备份点-信息框架 */
+.bkpCntnt{
+	border:1px solid #99BBE8;
+	border-top:0px;
+	backGround:#FFFFFF;
+	float:left;
+	width:96%;
+	height:400px;
+	overflow:auto;
+	position: absolute;
+	top:36px;
+}
+.contDiv{
+	border:1px solid #D6D6D6;
+	float:left;
+	width:99%;
+	margin-top:3px;
+	margin-left:5px;
+}
+/* 备份点-表格背景 */
+.bkpCntnt td{
+	backGround:#EFEFEF;
+}
+/* 备份点-侧边栏框架 */
+#backupBar{
+	border:1px solid #99BBE8;
+	border-right:0px;
+	backGround:#E0ECFF;
+	color:#808080;
+	font-weight:bold;
+	font-size:13pt;
+	width:21px;
+	*width:20px;
+	float:left;
+	cursor:pointer;
+	display:none;
+	padding-left:3px;
+	position: absolute;
+	top:70px;
+	right:0px;
+	z-index:9000;
+}
+/* 备份点-图片对象 */
+#imgDrc{
+	padding-left:0px;
+	padding-top:2px;
+}
+
+/****************************/
+/********* 构造页面区 *********/
+/****************************/
+/* 构造区-头部DIV对象 */
+#top{
+	left: 0px; 
+	bottom: 0px;
+	width: 99.0%;
+	height:31px;
+	position: absolute;
+	z-index: 710; 
+	border:1px solid #99BBE8;
+	padding-top : 3px;
+	padding-left: 15px;
+	background: url("../../images/jobstp/top_bg.gif") center ;
+	float: left;
+}
+#infoTop{
+	top:3px;
+	left:0px;
+	width:730px;
+	position: absolute;
+	z-index: 770; 
+	float: left;
+}
+.infoDiv{
+	float: left;
+	margin-top:3px;
+	vertical-align: bottom;
+}
+.timeFont{
+	font-size:12px;
+	color:#808080;
+}
+#pageTop{
+	top:3px;
+	right:0px;
+	width:140px;
+	position: absolute;
+	z-index: 770; 
+}
+/* 构造区-列表框头部DIV对象 */
+#toptable{
+	left: 0px; 
+	top: 22px;
+	width: 99.0%;
+	height:31px;
+	position: absolute;
+	z-index: 700; 
+	border:1px solid #99BBE8;
+	padding-top : 3px;
+	padding-left: 15px;
+	background: url("../../images/jobstp/top_table.gif") center ;
+	float: left;
+}
+/* 构造区-左部DIV对象 */
+#left{
+	-moz-user-select:none; 
+	left: 0px; 
+	top: 34px;
+	bottom: 35px; 
+	width: 18%; 
+	height: 99%; 
+	*height: 96%; 
+	position: absolute; 
+	z-index: 700; 
+	border:1px solid #99BBE8;
+	border-top:0px solid #99BBE8;
+	border-bottom:0px solid #99BBE8;
+	background: #efefef;
+}
+/* 构造区-左部DIV对象关闭按钮 */
+#leftClsTab{
+	position: absolute;
+	top: 50%;
+	left: 17.6%;
+	z-index: 700;
+	width: 5px;
+	height: 35px;
+	cursor: pointer;
+}
+/* 构造区-左部DIV对象显示按钮 */
+#leftOpnTab{
+	position: absolute;
+	top: 50%;
+	left: 3px;
+	z-index: 700;
+	width: 5px;
+	height: 35px;
+	display: none;
+	cursor: pointer;
+}
+/* 构造区-左部DIV对象-TBL对象 */
+#left table td{
+	height : 30px;
+	font-size : 12px;
+}
+/* 构造区-左部DIV对象-TBL对象-鼠标 */
+td a:link{ 
+	color:#696969; 
+	text-decoration:underline;
+}
+td a:visited{ 
+	color:#696969;
+	text-decoration:underline;
+}
+td a:hover{ 
+	color:#CD5C5C;
+	text-decoration:underline;
+}
+td a:active{ 
+	color:#CD5C5C;
+	text-decoration:none;
+}
+/* 构造区-右部DIV对象 */
+#right{
+	right: 0px; 
+	top: 74px; 
+	width: 81.5%; 
+	height: 91.5%; 
+	position: absolute; 
+	z-index: 700; 
+	border:0px solid #99BBE8;
+	overflow:auto;
+}
+/* 构造区-底部DIV对象 */
+#down{
+	left:18.1%;
+	*left:18.2%;
+	bottom: 36px; 
+	width: 82%;  
+	height: 230px; 
+	position: absolute; 
+	z-index: 710; 
+	border:0px solid #99BBE8;
+	border-top:1px solid #99BBE8;
+	background: #efefef;
+}
+/* 构造区-具体构造9区域 */
+#tbl9Area{
+	position: absolute; 
+	left: -457px; 
+	top: -405px; 
+	height: 1200px; 
+	width: 1920px; 
+	background-color: ''; 
+	z-index: 100;
+}
+.tbl9AreaDiv{
+	border:0px solid #99BBE8;
+	height: 400px; 
+	width: 640px;
+}
+
+/** 文本下拉框 **/
+.txtSelDiv1{
+	float:left; 
+	border:2px solid #316AC5;
+	backGround:#ffffff; 
+	padding:0 3px 3px 0;
+}
+.txtSelDiv1 input{
+	border:1px;
+}
+.txtSelDiv1 img{
+	border:0px;
+	vertical-align:middle; 
+	vertical-align:-moz-middle !important;/*for firefox*/
+	cursor: pointer;
+}
+
+/** 日期类型块 **/
+#btnTypeDiv{
+	float:left; 
+}
+#dateTypeDiv{
+	float:left;
+	display: none;
+}
+.dateslcDiv{
+	margin-top: 4px;
+	float:left; 
+}
+.specialDiv{
+	padding-left:4px;
+	float:left; 
+	display: none;
+}
+.specialDiv input{
+	height : 20px;
+	width : 110px;
+}
+
+/****************************/
+/********* 监控页面区 *********/
+/****************************/
+/** 监控页-顶部DIV对象 **/
+#viewTop{
+	left: 0px; 
+	top: 0px;
+	width: 99.5%;
+	height:30px;
+	position: absolute;
+	z-index: 700; 
+	border:1px solid #99BBE8;
+	border-top:0px;
+	padding-top : 3px;
+	padding-left: 15px;
+	background: url("../../images/jobstp/view_bg.png") center ;
+	float: left;
+}
+/** 监控页-顶部DIV对象-子DIV对象 **/
+#viewTop div{
+	cursor : pointer;
+	text-align:-moz-center !important; /*For FireFox*/
+	text-align:center; /*For IE*/
+	display : inline-block;
+	vertical-align : 50%;
+	font-size : 11pt;
+}
+/** 监控页-顶部DIV对象-子TAB对象 **/
+.viewTap{
+	width : 80px;
+	height: 25px;
+	border : 1px solid #99BBE8;
+	background: url("../../images/jobstp/nock_bg.png") center ;
+	float : left;
+	margin-left : 6px;
+	color:#808080;
+}
+.viewHoverTap{
+	width : 80px;
+	height: 25px;
+	border : 1px solid #99BBE8;
+	background: url("../../images/jobstp/nockhv_bg.png") center ;
+	float : left;
+	margin-left : 6px;
+	color:#000000;
+	
+}
+.viewCheckTap{
+	width : 80px;
+	height: 30px;
+	border : 1px solid #99BBE8;
+	border-bottom : 0px;
+	background: url("../../images/jobstp/ck_bg.png") center ;
+	float : left;
+	margin-left : 6px;
+	font-weight:bold;
+	color:#000000;
+}
+/** 监控页-底部DIV对象 **/
+#viewBotm{
+	left: 0px; 
+	bottom: 0px;
+	width: 99.5%;
+	height:31px;
+	position: absolute;
+	z-index: 700; 
+	border:1px solid #99BBE8;
+	border-bottom:0px;
+	padding-top : 3px;
+	padding-left: 15px;
+	background: url("../../images/jobstp/top_bg.gif") center ;
+	float: left;
+}
+#viewDown{
+	left:0;
+	bottom: 33px; 
+	*bottom: 33px; 
+	width: 100%;  
+	height: 250px; 
+	position: absolute; 
+	z-index: 1060; 
+	border:1px solid #99BBE8;
+	background: #efefef;
+}
+#viewLog{
+	right:0;
+	bottom:0;
+	position: absolute;
+	border:0px solid #99BBE8;
+	width: 30px;
+	height: 30px;
+	z-index: 800; 
+}
+.allDisp{
+	display:none;
+}
+.showCur{cursor:pointer}
+.overCss{
+	font-weight:bold;
+}
+.subDiv{
+   width:200px;
+   height:330px;
+   border:1px solid #cccccc;
+   overflow-y:auto;
+   display:none;
+   position: absolute;
+   background-color:#f0f0f0;
+   z-index:200;
+   text-align:left;
+   padding:3px 3px 3px 3px;
+}
+.subDiv div{
+	width: 191px;
+	border: 1px solid #d0d0d0;
+	margin:2px 2px 2px 2px;
+	padding-top:5px;
+	padding-left:3px;
+}
+#lackFeeMng table th{
+	padding-left:2px;
+	padding-right:2px;
+	text-align:left;
+	white-space: nowrap;
+	background: url("../../images/jobstp/top_bg.gif") center ;
+	color: #0f0f0f;
+	font-size: 13px;
+	height: 25px;
+	cursor: pointer;
+}
+#lackFeeMng table td{
+	height:35px;
+	border-top:0px #ffffff solid;
+	padding-left:5px;
+	text-align:left;
+	font-size: 10pt;
+	background: #efefef;
+}
+#chargeFeeMng table th{
+	padding-left:2px;
+	padding-right:2px;
+	text-align:left;
+	white-space: nowrap;
+	background: url("../../images/jobstp/top_bg.gif") center ;
+	color: #0f0f0f;
+	font-size: 13px;
+	height: 25px;
+	cursor: pointer;
+}
+#chargeFeeMng table td{
+	height:35px;
+	border-top:0px #ffffff solid;
+	padding-left:5px;
+	text-align:left;
+	font-size: 10pt;
+	background: #efefef;
+}

@@ -1,0 +1,580 @@
+html, body {
+	height:100%;
+	width:100%;
+	margin:0px;
+	padding:0px;
+	overflow:hidden;
+	font-family:"微软雅黑";
+}
+.body {
+	height:100%;
+	left:0px;
+	top:0px;
+	width:100%;
+	overflow:auto;
+	position: absolute;
+}
+#loading{
+	z-index:600; 
+	width:98%;
+	height:98%;
+	position: absolute; 
+	text-align:-moz-center !important; /*For FireFox*/
+	text-align:center; /*For IE*/
+	vertical-align: bottom;
+	background:#F5F5F5 url("../images/webset/loading.gif") center no-repeat;
+}
+/***************** 公共-CSS样式 *****************/
+.errInpt{
+	background:#FFC0CB;
+	border:1px solid #DC143C;	
+}
+.chkBold{
+	border:1px solid #48D1CC;	
+}
+
+.susWord{
+	color:blue;
+	font-weight:bold;
+}
+.errWord{
+	color:red;
+	font-weight:bold;
+}
+
+/***************** Button - CSS样式 *****************/
+.searchBtn{
+	cursor: pointer;
+	background:url(../images/button/search.png) no-repeat #F0F8FF;
+	background-position: 1% 50%;
+	height:25px;
+	width:80px;
+	padding-left:8px;
+}
+.saveBtn{
+	cursor: pointer;
+	background:url(../images/button/edit_add.png) no-repeat #F0F8FF;
+	background-position: 1% 50%;
+	height:25px;
+	width:80px;
+	padding-left:8px;
+}
+.reloadBtn{
+	cursor: pointer;
+	background:url(../images/button/reload.png) no-repeat #F0F8FF;
+	background-position: 1% 50%; 
+	height:25px;
+	width:80px;
+	padding-left:8px;
+}
+.deleteBtn{
+	cursor: pointer;
+	background:url(../images/button/cancel.png) no-repeat #F0F8FF;
+	background-position: 1% 50%;
+	height:25px;
+	width:80px;
+	padding-left:8px;
+}
+.backBtn{
+	cursor: pointer;
+	background:url(../images/button/back.png) no-repeat #F0F8FF;
+	background-position: 1% 50%;
+	height:25px;
+	width:80px;
+	padding-left:8px;
+}
+.redoBtn{
+	cursor: pointer;
+	background:url(../images/button/redo.png) no-repeat #F0F8FF;
+	background-position: 1% 50%;
+	height:25px;
+	width:80px;
+	padding-left:8px;
+}
+.undoBtn{
+	cursor: pointer;
+	background:url(../images/button/undo.png) no-repeat #F0F8FF;
+	background-position: 1% 50%;
+	height:25px;
+	width:80px;
+	padding-left:8px;
+}
+.confirmBtn{
+	cursor: pointer;
+	background:url(../images/button/ok.png) no-repeat #F0F8FF;
+	background-position: 1% 50%;
+	height:25px;
+	width:80px;
+	padding-left:8px;
+}
+.endofBtn{
+	cursor: pointer;
+	background:url(../images/button/no.png) no-repeat #F0F8FF;
+	background-position: 1% 50%;
+	height:25px;
+	width:80px;
+	padding-left:8px;
+}
+.restoreBtn{
+	cursor: pointer;
+	background:url(../images/button/edit.png) no-repeat #F0F8FF;
+	background-position: 1% 50%;
+	height:25px;
+	width:80px;
+	padding-left:8px;
+}
+.waitingBtn{
+	cursor: pointer;
+	background:url(../images/button/waiting.gif) no-repeat #F0F8FF;
+	background-position: 1% 50%;
+	height:25px;
+	width:80px;
+	padding-left:8px;
+}
+.hangBtn{
+	cursor: pointer;
+	background:url(../images/button/hang.png) no-repeat #F0F8FF;
+	background-position: 1% 50%;
+	height:25px;
+	width:80px;
+	padding-left:8px;
+}
+.triggerBtn{
+	cursor: pointer;
+	background:url(../images/button/trigger.png) no-repeat #F0F8FF;
+	background-position: 1% 50%;
+	height:25px;
+	width:80px;
+	padding-left:8px;
+}
+.relaseBtn{
+	cursor: pointer;
+	background:url(../images/button/relase.png) no-repeat #F0F8FF;
+	background-position: 1% 50%;
+	height:25px;
+	width:80px;
+	padding-left:8px;
+}
+/***************** 模糊选择-CSS样式(老版本) *****************/
+.slctSugst{
+	position: absolute; 
+	width: 200px; 
+	border: 1px solid #316AC5;
+	height:19px;
+	/*margin:3px 3px 3px 3px;*/
+}
+.slctSugst input{
+	font-family:Arial;
+	padding-left:2px;
+}
+
+.slctSugstImg{
+	border: 0px; 
+	float: right;
+	/*padding:2px;*/
+}
+.slctSugstDiv{
+	position: absolute; 
+	left: 0px; 
+	width: 200px; 
+	border: 1px solid #316AC5; 
+	display: none; 
+	background-color:#ffffff;
+}
+.slctSugstDiv ul li{
+	font-family:Arial;
+	margin:3px 3px 3px 3px;
+	cursor: pointer;
+}
+
+/***************** 信息栏-CSS样式 *****************/
+.buinfo{
+	width:100%; 
+}
+.statusInfo{
+	width:100%; 
+	height:30px; 
+	position:absolute; 
+	z-index:200;
+	bottom:0px; 
+	font-size:12px;
+}
+.status_cont{
+	width:100%;
+	height:30px;
+	background:#E5E5E5;
+	border:solid #B5B5B5 1px; 
+	border-bottom:0px;
+	clear:both;
+	padding:2px 2px 0 2px;
+	font-size:15px;
+}
+.contShow{
+	position: absolute;
+	width:85%;
+	height:30px;
+	float: left;
+	vertical-align:middle;
+	margin:3px 3px 3px 3px;
+	font-family:Verdana, arial, sans-serif;
+}
+.serhShow{
+	border-left:solid #B5B5B5 1px;
+	padding:2px 2px 6px 6px;
+	clear:none;
+	float: right;
+}
+.imgShow{
+	border-left:solid #B5B5B5 1px;
+	padding:6px 6px 6px 6px;
+	float: right;
+	cursor:pointer;
+}
+#binfoCont{
+	width:100%;
+	border:1px #999999 solid;
+	position:absolute;
+	background-color:#F5F5F5;
+	z-index:201;
+	height:350px;
+	text-align: center;
+	display:none;
+}
+#binfoContBody{
+	width:99%;
+	margin:3px 3px 3px 3px;
+	background-color:#FdFdFd;
+	height:345px;
+	overflow-y:auto;
+	text-align: left;
+	padding-left:3px;
+	font-family:Verdana, arial, sans-serif;
+}
+#binfoContBody ul{
+	list-style-type: none; 
+	padding: 0px; 
+	margin: 0px;
+}
+#binfoContBody ul li{
+	height:25px;
+	background-color:#F0F0F0;
+	vertical-align:middle;
+	cursor:pointer;
+}
+
+/***************** 菜单栏-CSS样式 *****************/
+.menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.menu li {
+	height: 20px;
+	position: relative;
+	float: left;
+	color: blue;
+	cursor: pointer;
+	background-color: #E6E6FA;
+	text-align: center;
+	border: 1px solid #cccccc;
+}
+.menu li ul {
+	width: 100%;
+	cursor: hand;
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+	display: none;
+	top: 0px;
+}
+.menu li ul li {
+	width: 100%;
+	display: block;
+	position: relative;
+	text-align: center;
+	border: 1px solid #cccccc;
+}
+.menu li ul li ul {
+	display: none;
+	position: absolute;
+	left: 100%;
+	top: 0px;
+	width: 100%;
+	border: 1px solid #cccccc;
+	padding: 0px;
+	margin: 0px;
+}
+.menu li ul li ul li ul {
+	display: none;
+	position: absolute;
+	left: 100%;
+	top: 0px;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+/***************** 树型选择-CSS样式 *****************/
+.tree {
+	margin: 0px;
+	padding: 0px;
+}
+.tree ul {
+	margin-left: 25px; /* 距离母体的边距 */
+	padding-left: 0px;
+}
+.tree li {
+	list-style-type:none;
+	vertical-align:middle;
+}
+.tree li a {
+	color: #000;
+	text-decoration: none;
+	font-family: arial;
+	font-size: 13px;
+	margin-left: 3px;
+	padding: 0px;
+}
+.tree li ul {
+	display: none;
+}
+.tree li ul a { /*margin-left: 3px;*/
+	padding: 0px;
+}
+.tree a.trea {
+	cursor: pointer;
+}
+.treeImg{
+	border:0px;	
+}
+.foldImg{
+	border:0px;	
+}
+.clickCss{
+	/*background-color:#48D1CC;
+	font-weight:bold;
+	color:#000000;*/
+	border:#DC143C 1px solid;
+}
+
+/***************** 列表框-CSS样式 *****************/
+.divBorder{
+	cursor:pointer;
+	background:url(../images/onto/tbl/btnbg.png) no-repeat #F0F8FF;
+}
+.sltdBg{
+	background-color:#FFEFD5;
+}
+
+.tblste {
+	border: 1px solid silver;
+}
+.tblstehead {
+	width:99%;
+	height:30px;
+	border-bottom: 1px solid silver;
+	background:#efefef;
+}
+.tblstehead td div{
+	width:26px;
+	height:24px;
+	cursor:pointer;
+}
+.tblstehead td div img{
+	margin-top:3px;
+	margin-left:4px;
+}
+
+
+.tblstehead select{
+	width:40px;
+	height:18px;
+}
+.tblstebody {
+	overflow: auto;
+	width: 100%;
+}
+.tblstebody table {
+	width: auto;
+}
+.tblstetitle {
+	background-color: #ffffff;
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	font-weight:bold;
+}
+
+.tblstetitle td {
+	padding-left:2px;
+	padding-right:2px;
+	white-space: nowrap;
+	background: url("../images/jobstp/top_bg.gif") center ;
+	color: #0f0f0f;
+	font-size: 13px;
+	height: 25px;
+	cursor: pointer;
+}
+.tblstematch {
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	background-color: #f0f0f0;
+}
+.tblstematch td {
+	white-space: nowrap;
+}
+.tblstematch td div {
+	font-size: 12px;
+	border: 1px solid #c0c0c0;
+	background-color: #f8f8f8;
+	height: 16px;
+	width: auto;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.tblstematch td div input {
+	font-size: 12px;
+	border-style: none;
+	background-color: #ffffff;
+}
+.tblsteodd {
+	background-color: #f8f8f8;
+}
+.tblsteeven {
+	background-color: #e8e8e8;
+}
+.tblsteodd td,.tblsteeven td {
+	font-size: 12px;
+	height:20px;
+}
+.tblsteodd td div,.tblsteeven td div{
+	padding-top:4px;
+	height: 20px;
+	border: 0px;
+}
+
+/***************** 模糊选择CSS样式(新版本) *****************/
+/** 模糊下拉框总框架 **/
+.sgtDdlDiv{
+	font-family:Verdana, arial, sans-serif;
+	width:200px;
+	position: absolute;
+	background-color:#FFFFFF;
+}
+/** 模糊下拉框主操作框架 **/
+.sgtOptDiv{
+	border:solid #316AC5 1px;
+	height:22px;
+}
+/** 模糊下拉框.文本框区 **/
+.sgtOptIpt{
+	float: left;
+	margin:2px 0px 2px 1px;
+	padding-left:2px;
+}
+/** 模糊下拉框.文本框 **/
+.sgtOptIpt input{
+	border:0px #999999 solid;
+	width:165px;
+}
+/** 模糊下拉框.选择键 **/
+.sgtOptImg{
+	float: right;
+	margin:3px 3px 2px 0px;
+}
+/** 模糊下拉框.文本选择区 **/
+.sgtTxtDiv{
+	border:1px #808080 solid;
+	background-color:#FFFFFF;
+	display:none;
+	z-index:7900;
+	text-align:left; 
+	text-align:-moz-left !important;/*for firefox*/
+}
+
+/***************** 日期选择CSS样式 *****************/
+.calendarClass{
+	cursor: pointer;
+	background:url(../images/onto/calendar.gif);
+	background-position:98.5%;
+	background-repeat:no-repeat;
+	line-height:20px;
+	border:1px solid #316AC5;
+	height:22px;
+}
+
+/***************** 多文本列表构件CSS样式 *****************/
+.imgSpan{
+	height:100%; 
+	vertical-align:bottom;
+}
+
+.addTblImg{
+	cursor: pointer;
+}
+
+.ddlfbltable{
+	border:1px #e0e0e0 solid;
+	background-color:#FFFFFF;
+}
+
+/***************** 文本下拉选择CSS样式 *****************/
+.txtSelDiv{
+	float:left; 
+	border:1px solid #316AC5;
+	backGround:#ffffff; 
+	padding:0 3px 3px 0;
+}
+.txtSelDiv input{
+	border:0px;
+}
+.txtSelDiv img{
+	border:0px;
+	vertical-align:middle; 
+	vertical-align:-moz-middle !important;/*for firefox*/
+	cursor: pointer;
+}
+
+/***************** PGM类型选择CSS样式 *****************/
+.typestebody{
+	border:1px #909090 solid;	
+}
+.typetitle {
+	background-color: #ffffff;
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	font-weight:bold;
+}
+
+.typetitle td {
+	white-space: nowrap;
+	background-color: #f5f5f5;
+	color: black;
+	font-size: 15px;
+	font-weight:bold;
+	font-family:楷体;
+	cursor: default;
+}
+.typetitle td input{ 
+	background-color:#eeeeee;
+	font-family:幼圆;
+	width:40px;
+}
+A.ss:link {
+	COLOR: #000000; TEXT-DECORATION: none;
+}
+A.ss:visited {
+	COLOR: #000000; TEXT-DECORATION: none;
+}
+A.ss:hover {
+	COLOR: #000000; TEXT-DECORATION: none;
+}
+A.ss:active {
+	COLOR: #000000; TEXT-DECORATION: none;
+}
+.coverDiv{
+	width:100%;
+	height:100%;
+	background:#808080;
+	z-index:100000;
+	position:absolute;
+}

@@ -1,0 +1,136 @@
+.attrTbl{
+	width: 900px; 
+	height: 435px; 
+	border: 0px solid green; 
+	z-index: 11060;
+}
+
+.tblCss{
+	overflow:hidden;
+	/** *left: -2500;
+	left: 100%;
+	top:50%;
+	* top:-50%;**/
+}
+
+#oprtDiv{
+	width: 735px;
+	border: 1px solid #d0d0d0;
+	margin:2px 2px 2px 2px;
+}
+
+.trgTbl{
+	border:1px #ffffff solid;
+}
+.trgTbl th{
+	height:35px;
+	border-bottom:1px #ffffff solid;
+	padding-left:5px;
+	text-align:right;
+	text-align:-moz-right !important; /*For FireFox*/
+	font-family:'幼圆', Helvetica, sans-serif;
+}
+.trgTbl td{
+	height:35px;
+	border-bottom:1px #ffffff solid;
+	padding-left:5px;
+	text-align:left;
+	font-size: 10pt;
+}
+.trgTbl input{
+	width:160px;
+}
+.trgTbl select{
+	width:160px;
+}
+
+#tbleDiv{
+	width: 98%;
+	border: 1px solid #d0d0d0;
+	margin:2px 2px 2px 2px;
+}
+
+#tbleDiv table th{
+	padding-left:2px;
+	padding-right:2px;
+	text-align:left;
+	white-space: nowrap;
+	background: url("../../images/jobstp/top_bg.gif") center ;
+	color: #0f0f0f;
+	font-size: 13px;
+	height: 25px;
+	cursor: pointer;
+}
+
+#tbleDiv table td{
+	height:35px;
+	border-top:0px #ffffff solid;
+	padding-left:5px;
+	text-align:left;
+	font-size: 10pt;
+	background: #efefef;
+}
+
+#operateBtn{
+	margin:2px 2px 2px 2px;
+	text-align:-moz-center !important; /*For FireFox*/
+	text-align:center; /*For IE*/
+	height:30px;
+	border: 1px solid #d0d0d0;
+	padding-top:5px;
+	width: 735px;
+	background: #f5f5f5;
+}
+
+#searDiv{
+	width: 99%;
+	border: 1px solid #d0d0d0;
+	margin:2px 2px 2px 2px;
+}
+#searDiv table td{
+	height:28px;
+	border-top:0px #ffffff solid;
+	padding-left:5px;
+	text-align:left;
+	font-size: 10pt;
+	background: #efefef;
+	width:10%;
+}
+
+#listDiv{
+	width: 99%;
+	border: 1px solid #d0d0d0;
+	margin:2px 2px 2px 2px;
+}
+
+#listDiv table th{
+	padding-left:2px;
+	padding-right:2px;
+	text-align:left;
+	white-space: nowrap;
+	background: url("../../images/jobstp/top_bg.gif") center ;
+	color: #0f0f0f;
+	font-size: 13px;
+	height: 25px;
+	cursor: pointer;
+}
+
+#listDiv table td{
+	height:35px;
+	border-top:0px #ffffff solid;
+	padding-left:5px;
+	text-align:left;
+	font-size: 10pt;
+	background: #efefef;
+}
+
+.searchBtnDiv{
+	margin:2px 2px 2px 2px;
+	text-align:-moz-right !important; /*For FireFox*/
+	text-align:right; /*For IE*/
+	height:26px;
+	border: 1px solid #d0d0d0;
+	padding-top:5px;
+	width: 99%;
+	background: #f5f5f5;
+}
