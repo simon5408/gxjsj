@@ -6,4 +6,7 @@
 	
 	<!-- jquery js -->
 	<script language="javascript" src="js/common/jQuery/jquery-1.4.4.min.js"></script>
+	<style type="text/css">
+	body{overflow:auto;}
+	</style>
 	
