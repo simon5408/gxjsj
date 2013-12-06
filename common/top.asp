@@ -32,18 +32,19 @@
 			
 			%>
 			<% if typeVal = "" then %>
-			<li><b><a href="kj.asp?type=1">计算机基础课程</a></b></li>
-			<li><b><a href="kj.asp?type=2">VB</a></b></li>
-			<li><b><a href="kj.asp?type=3">VF</a></b></li>				
-			<li><b><a href="kj.asp?type=4">计算机应用基础</a></b></li>
-			<li><b><a href="kj.asp?type=5">数据库及应用</a></b></li>
+			<li><b><a href="jxdg.asp?type=1">计算机基础课程</a></b></li>
+			<li><b><a href="jxdg.asp?type=2">VB</a></b></li>
+			<li><b><a href="jxdg.asp?type=3">VF</a></b></li>				
+			<li><b><a href="jxdg.asp?type=4">计算机应用基础</a></b></li>
+			<li><b><a href="jxdg.asp?type=5">数据库及应用</a></b></li>
 			<% else %>
+			<li><b><a href="jxdg.asp?type=<%=typeVal%>">教学大纲</a></b></li>
+			<li><b><a href="ja.asp?type=<%=typeVal%>">教材教案</a></b></li>
 			<li><b><a href="kj.asp?type=<%=typeVal%>">课件</a></b></li>
 			<li><b><a href="zyxt.asp?type=<%=typeVal%>">作业习题</a></b></li>
-			<li><b><a href="ja.asp?type=<%=typeVal%>">教案</a></b></li>
-			<li><b><a href="ckwx.asp?type=<%=typeVal%>">参考文献</a></b></li>
-			<li><b><a href="lyb.asp?type=<%=typeVal%>">留言板</a></b></li>
+			<li><b><a href="rjxz.asp?type=<%=typeVal%>">软件下载</a></b></li>
 			<% end if %>
+			<li><b><a href="lybList.asp">留言板</a></b></li>
 			<li><b><a href="aboutus.asp">关于我们</a></b></li>				
 		</ul>
 	</div>

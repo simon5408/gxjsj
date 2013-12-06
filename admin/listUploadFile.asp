@@ -25,7 +25,7 @@
 <body>
 <% username=session("username") 
 	if username<>"" then 
-	session("typeName") = "上传信息管理"
+	session("typeName") = "信息管理"
 %>
 <!--#include file="listUploadFileAct.asp" -->
 	<!-- 头部操作菜单栏 -->

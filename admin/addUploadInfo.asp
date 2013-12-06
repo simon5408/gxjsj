@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%
+filePath = URLDecode(request.querystring("pathName"))
 cate = request.querystring("cate")
 cateName = ""
 if cate =1 then
@@ -9,11 +10,43 @@ if cate =2 then
 	cateName = "作业习题"
 end if
 if cate =3 then
-	cateName = "教案"
+	cateName = "教材教案"
 end if
 if cate =4 then
-	cateName = "参考文献"
+	cateName = "软件下载"
 end if
+if cate =5 then
+	cateName = "教学大纲"
+end if
+
+Function URLDecode(enStr)
+   dim deStr,strSpecial
+   dim c,i,v
+     deStr=""
+     strSpecial="!""#$%&'()*+,.-_/:;<=>?@[\]^`{|}~%"
+     for i=1 to len(enStr)
+       c=Mid(enStr,i,1)
+       if c="%" then
+         v=eval("&h"+Mid(enStr,i+1,2))
+         if inStr(strSpecial,chr(v))>0 then
+           deStr=deStr&chr(v)
+           i=i+2
+         else
+           v=eval("&h"+ Mid(enStr,i+1,2) + Mid(enStr,i+4,2))
+           deStr=deStr & chr(v)
+           i=i+5
+         end if
+       else
+         if c="+" then
+           deStr=deStr&" "
+         else
+           deStr=deStr&c
+         end if
+       end if
+     next
+     URLDecode=deStr
+End function
+
 %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -60,7 +93,7 @@ end if
 
 	<!-- 左边操作栏 -->
 	<div id="left">
-		
+		<!--#include file="left.asp" -->
 	</div>
 	
 	<div id="right">
@@ -68,7 +101,7 @@ end if
 	<form  name="addEduType" method="post" action="addUploadInfoAct.asp">
 	<input type="hidden" name="scCateId" id="scCateId" value="<%=cint(cate)%>" />
 	<input type="hidden" name="scCateName" id="scCateName" value="<%=cateName%>" />
-	<input type="hidden" name="scPath" id="scPath" value="<%=request.querystring("pathName")%>" />
+	<input type="hidden" name="scPath" id="scPath" value="<%=filePath%>" />
 	<div id="oprtDiv">
 	<table class="trgTbl" width="100%" border="0" cellpadding="1" cellspacing="1" style="background:#f5f5f5">
 		<tr>
@@ -92,7 +125,7 @@ end if
 		<tr>
 			<th width="100" height="50" align="right">上传文件：</th>
 			<td width="" align="left">
-				<%=request.querystring("pathName")%>
+				<%=filePath%>
 			</td>
 		</tr>
 	</table>

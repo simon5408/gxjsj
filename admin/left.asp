@@ -4,6 +4,30 @@
 			<tr>
 				<td>
 					<img src="../images/jobstp/order_job.png" border="0">&nbsp; 
+					<a href="uploadFiles.asp?cate=5">新增教学大纲</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="../images/jobstp/order_job.png" border="0">&nbsp; 
+					<a href="listUploadFile.asp?cate=5">管理教学大纲</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="../images/jobstp/order_job.png" border="0">&nbsp; 
+					<a href="uploadFiles.asp?cate=3">新增教材教案</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="../images/jobstp/order_job.png" border="0">&nbsp; 
+					<a href="listUploadFile.asp?cate=3">管理教材教案</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="../images/jobstp/order_job.png" border="0">&nbsp; 
 					<a href="uploadFiles.asp?cate=1">新增课件</a>
 				</td>
 			</tr>
@@ -28,25 +52,13 @@
 			<tr>
 				<td>
 					<img src="../images/jobstp/order_job.png" border="0">&nbsp; 
-					<a href="uploadFiles.asp?cate=3">新增教案</a>
+					<a href="uploadFiles.asp?cate=4">新增软件下载</a>
 				</td>
 			</tr>
 			<tr>
 				<td>
 					<img src="../images/jobstp/order_job.png" border="0">&nbsp; 
-					<a href="listUploadFile.asp?cate=3">管理教案</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<img src="../images/jobstp/order_job.png" border="0">&nbsp; 
-					<a href="uploadFiles.asp?cate=4">新增参考文献</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<img src="../images/jobstp/order_job.png" border="0">&nbsp; 
-					<a href="listUploadFile.asp?cate=4">管理参考文献</a>
+					<a href="listUploadFile.asp?cate=4">管理软件下载</a>
 				</td>
 			</tr>
 			<tr>

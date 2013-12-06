@@ -37,7 +37,7 @@
 				<div style="margin-left:5px;">您输入的网址有误，请返回首页 &gt;&gt; <a href="index.asp">首页</a></div>
 			<% end if %>
 			<div style="font:黑体; font-size:24px; font-weight:bold;">
-				“<%=typeTitle%>”教案
+				“<%=typeTitle%>”教程教案
 			</div>
 			<div style="height:20px;"></div>
 			<%
@@ -49,7 +49,7 @@
 				exit for
 				end if
 			%>
-			<div class="listDiv"><img src="images/jt.gif"> <a href="/admin/files/<%=rs("sc_path")%>"><%=rs("sc_name")%></a></div>
+			<div class="listDiv"><img src="images/jt.gif"> <a href="/admin/files/<%=rs("sc_path")%>" target="_blank"><%=rs("sc_name")%></a></div>
 			<% 
 				rs.movenext
 				next 

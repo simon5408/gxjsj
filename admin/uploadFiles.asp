@@ -58,7 +58,7 @@ Sub SaveTofile()'将上传的文件保存到服务器
   end with
  Set strm=Nothing
  Set formstrm=Nothing
- response.redirect "addUploadInfo.asp?cate="&cateId&"&pathName="&filename
+ response.redirect "addUploadInfo.asp?cate="&cateId&"&pathName="&Server.UrlEncode(filename)
 End Sub
 function fRegExpSgl(str,glb,igc,mtl,pt,rpt)
  dim re
@@ -106,7 +106,7 @@ end function
 
 	<!-- 左边操作栏 -->
 	<div id="left">
-		
+		<!--#include file="left.asp" -->
 	</div>
 	
 	<div id="right">

@@ -108,3 +108,21 @@ a:hover	{color:red; text-decoration:none;}
 	color: #666666;
 }
 .indexBodyDiv a:hover	{color:red; text-decoration:none;}
+
+.lybContent{
+	border:1px solid #808080; 
+	width:100%; 
+	margin:2px auto;
+}
+.lybContent .lybZX{
+	min-height:30px;
+	background: #c0c0c0;
+}
+.lybContent .lybZX div{
+	float:left;
+	width: 186px;
+}
+.lybContent .lybDF{
+	background: #f0f0f0;
+	min-height:30px;
+}

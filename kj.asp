@@ -49,7 +49,7 @@
 				exit for
 				end if
 			%>
-			<div class="listDiv"><img src="images/jt.gif"> <a href="/admin/files/<%=rs("sc_path")%>"><%=rs("sc_name")%></a></div>
+			<div class="listDiv"><img src="images/jt.gif"> <a href="/admin/files/<%=rs("sc_path")%>" target="_blank"><%=rs("sc_name")%></a></div>
 			<% 
 				rs.movenext
 				next 

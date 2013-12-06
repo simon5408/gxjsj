@@ -121,13 +121,13 @@
 	  				<!-- username -->
 	  				<div class="unDiv">
 	  					<div class="nameType">
-	  						用户姓名：<input type="text" id="username" name="username" value="admin" size="25" />
+	  						用户姓名：<input type="text" id="username" name="username" value="" size="25" />
 	  					</div>
 	  				</div>
 	  				<!-- password -->
 	  				<div class="pwDiv">
 	  					<div class="nameType">
-	  						用户密码：<input type="password" id="password" name="password" value="123456" size="25" style="width:180px;" />
+	  						用户密码：<input type="password" id="password" name="password" value="" size="25" style="width:180px;" />
 	  					</div>
 	  				</div>
 	  				<!-- button -->

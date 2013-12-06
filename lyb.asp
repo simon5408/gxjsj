@@ -1,22 +1,3 @@
-<%
-kjType = request.querystring("type")
-kjTypeName = ""
-if kjType =1 then
-	kjTypeName = "计算机基础课程"
-end if
-if kjType =2 then
-	kjTypeName = "VB"
-end if
-if kjType =3 then
-	kjTypeName = "VF"
-end if
-if kjType =4 then
-	kjTypeName = "计算机应用基础"
-end if
-if kjType =5 then
-	kjTypeName = "数据库及应用"
-end if
-%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -46,14 +27,15 @@ end if
 				$("#lyName").removeClass('errInpt');
 			}
 			
-			var lySpec = $("#lySpec").val();
-			if($.trim(lySpec) == ""){
-				alert("专业为必填项！");
-				$("#lySpec").focus();
-				$("#lySpec").addClass('errInpt');
+			var lyTypeId = $("#lyTypeId").val();
+			if($.trim(lyTypeId) == "-99"){
+				alert("课程为必选项！");
+				$("#lyTypeId").focus();
+				$("#lyTypeId").addClass('errInpt');
 				return false;
 			}else{
-				$("#lySpec").removeClass('errInpt');
+				$("#lyTypeId").removeClass('errInpt');
+				$("#lyTypeName").val($("#lyTypeId").find('option:selected').text());
 			}
 			
 			var lyInfo = $("#lyInfo").val();
@@ -78,18 +60,13 @@ end if
 		<!-- 底部操作菜单栏 -->
 		<!--#include file="common/top.asp" -->
 		<div id="content" style="width: 748px; min-height: 481px;">
-			<%if kjType > 5 then%>
-				<div style="margin-left:5px;">您输入的网址有误，请返回首页 &gt;&gt; <a href="index.asp">首页</a></div>
-			<% end if %>
 			<div style="font:黑体; font-size:24px; font-weight:bold;">
-				“<%=kjTypeName%>”留言板
+				留言板
 			</div>
 			<div style="height:20px;"></div>
 			<div style="border:1px solid #c0c0c0;">
 				<div class="listDiv" style="height:auto">
 				<form  name="addLiuyanban" method="post" action="addLybInfoAct.asp">
-				<input type="hidden" name="lyTypeId" id="lyTypeId" value="<%=cint(kjType)%>" />
-				<input type="hidden" name="lyTypeName" id="lyTypeName" value="<%=kjTypeName%>" />
 					<table cellpadding="0" cellspacing="0" border="0">
 						<tr>
 							<th height="35px;"><span class="necessSpan">*</span> 学 号：</th>
@@ -100,8 +77,20 @@ end if
 							<td><input type="text" name="lyName" id="lyName" size="32" style="width:250px;" /></td>
 						</tr>
 						<tr>
-							<th><span class="necessSpan">*</span> 专 业：</th>
-							<td><input type="text" name="lySpec" id="lySpec" size="64" style="width:250px;" /></td>
+							<th><span class="necessSpan">*</span> 课 程：</th>
+							
+							<td>
+								<input type="hidden" name="lySpec" id="lySpec" value="" />
+								<input type="hidden" name="lyTypeName" id="lyTypeName" />
+								<select name="lyTypeId" id="lyTypeId">
+									<option value="-99">-选择-</option>
+									<option value="1">计算机基础课程</option>
+									<option value="2">VB</option>
+									<option value="3">VF</option>
+									<option value="4">计算机应用基础</option>
+									<option value="5">数据库及应用</option>
+								</select>
+							</td>
 						</tr>
 						<tr>
 							<th><span class="necessSpan">*</span> 留 言：</th>
