@@ -2,22 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-	<title>慧源教育-后台管理平台</title>
-	<LINK href="../css/onto_style.css" type="text/css" rel="stylesheet">
-	
-	<!-- jquery js -->
-	<script language="javascript" src="../js/common/jQuery/jquery-1.4.4.min.js"></script>
-	<script language="javascript" src="../js/common/jQuery/easyui/jquery.easyui.min.js"></script>
-	
-	<!-- jquery css -->
-	<link rel="stylesheet" type="text/css" href="../js/common/jQuery/easyui/themes/default/easyui.css">
-	<link rel="stylesheet" type="text/css" href="../js/common/jQuery/easyui/themes/icon.css">
-	
-	<!-- private css -->
-	<link rel="stylesheet" type="text/css" href="../css/manage/hyMng.css">
-	
-	<!-- attr css -->
-	<link rel="stylesheet" type="text/css" href="../css/manage/hyAttr.css">
+	<!--#include file="header.asp" -->
 
 </head>
 

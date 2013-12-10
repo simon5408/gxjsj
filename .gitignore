@@ -1,5 +1,8 @@
 *.class
 babyweb.exe
+admin/files/
+*.mdb
+*.txt
 
 # Package Files #
 *.jar
